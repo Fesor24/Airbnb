@@ -1,0 +1,6 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="Airbnb.Domain/Airbnb.Domain.csproj" Id="9b7abdeb-e121-4873-9b97-90e4c64f384a" />
+  </Folder>
+  <Folder Name="/test/" />
+</Solution>
