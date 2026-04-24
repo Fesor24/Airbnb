@@ -1,6 +1,7 @@
 <Solution>
   <Folder Name="/src/">
     <Project Path="Airbnb.Domain/Airbnb.Domain.csproj" Id="9b7abdeb-e121-4873-9b97-90e4c64f384a" />
+    <Project Path="Bookify.Application/Bookify.Application.csproj" Id="72079dc3-bf5d-493b-988a-cafff4e668ef" />
   </Folder>
   <Folder Name="/test/" />
 </Solution>

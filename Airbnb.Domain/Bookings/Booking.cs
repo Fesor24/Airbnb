@@ -1,5 +1,4 @@
-﻿using System.Reflection.Metadata;
-using Airbnb.Domain.Abstractions;
+﻿using Airbnb.Domain.Abstractions;
 using Airbnb.Domain.Apartments;
 using Airbnb.Domain.Bookings.Events;
 using Airbnb.Domain.Shared;
@@ -62,7 +61,7 @@ public sealed class Booking : Entity
     public Result Confirm(DateTime utcNow)
     {
         if (Status != BookingStatus.Reserved)
-            return Result.Failure(BookingErrors.NotPending);
+            return Result.Failure(BookingErrors.NotReserved);
 
         Status = BookingStatus.Confirmed;
         ConfirmedOnUtc = utcNow;
@@ -76,7 +75,7 @@ public sealed class Booking : Entity
     {
         if(Status != BookingStatus.Reserved)
         {
-            return Result.Failure(BookingErrors.NotPending);
+            return Result.Failure(BookingErrors.NotReserved);
         }
 
         Status = BookingStatus.Rejected;
