@@ -3,9 +3,23 @@ name: airbnb-workflow #name of workflow
 on: [push, workflow_dispatch] # the triggers
 
 jobs:
-  test:
+  test: # name of this job, could be any name we want
     runs-on: ubuntu-latest # set the runner
-    steps: 
+    steps:
+        - name: Get code
+          uses: actions/checkout@v3
+
+        - name: Confirm checkout
+          run: echo "Code obtained successfully"
+
+        - name: Install .NET
+          uses: actions/setup-dotnet@v5
+          with:
+            dotnet-version: '10.0.x'
+
+        - name: Build project
+          run: dotnet build
+
         - name: Test start
           run: | # we are defining a command to be executed when we use run, pipe symbol for multi line commands
              echo "Tests initialized!!!" 
