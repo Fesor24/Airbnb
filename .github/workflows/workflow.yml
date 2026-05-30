@@ -1,0 +1,15 @@
+name: airbnb-workflow #name of workflow
+
+on: [push, workflow_dispatch] # the triggers
+
+jobs:
+	first-job:
+		runs-on: ubuntu-latest # set the runner
+		steps: 
+			- name: Echo greeting
+			  run: echo "Hello World!!!" # we are defining a command to be executed when we use run
+
+		steps:
+			- name: Echo goodbye
+			  run: echo "Goodbye"
+
