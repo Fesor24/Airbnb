@@ -7,7 +7,9 @@ jobs:
     runs-on: ubuntu-latest # set the runner
     steps: 
         - name: Echo greeting
-          run: echo "Hello World!!!" # we are defining a command to be executed when we use run
+          run: | # we are defining a command to be executed when we use run, pipe symbol for multi line commands
+             echo "Hello World!!!" 
+             echo "This is a .NET project"
 
         - name: Echo goodbye
           run: echo "Goodbye"
