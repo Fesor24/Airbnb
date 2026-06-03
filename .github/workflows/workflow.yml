@@ -37,5 +37,5 @@ jobs:
     needs: test # this will make it run after the test job and not in parallel
     steps:
       - name: Get code
-        uses: action/checkout@v3
+        uses: actions/checkout@v3
 
