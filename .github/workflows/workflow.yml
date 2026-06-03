@@ -1,9 +1,13 @@
 name: airbnb-workflow #name of workflow
 
-on: [push, workflow_dispatch] # the triggers
+on: #the triggers
+  workflow_dispatch:
+  push:
+     branches:
+       - main
 
 jobs:
-  test: # name of this job, could be any name we want
+  test: # job identifier...could be anything
     runs-on: ubuntu-latest # set the runner
     steps:
         - name: Get code
@@ -27,4 +31,11 @@ jobs:
 
         - name: Test completed
           run: echo "Tests run successfully"
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: test # this will make it run after the test job and not in parallel
+    steps:
+      - name: Get code
+        uses: action/checkout@v3
 
